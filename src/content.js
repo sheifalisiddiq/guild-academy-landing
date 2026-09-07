@@ -30,7 +30,8 @@ export const nav = {
 };
 
 export const hero = {
-  headline: 'Learn to Trade. Build Your Financial Future.',
+  headline:
+    'Join a global community built around education, daily signals and verified results for $30/month.',
   supporting:
     'Learn the skills, strategies, and market knowledge you need to trade with greater confidence and work toward building wealth through the financial markets.',
   cta: 'Get Started',
@@ -153,6 +154,38 @@ export const howItWorks = {
     {
       title: 'Start Trading',
       body: 'Begin structured training and join the GUILD community.',
+    },
+  ],
+};
+
+/* DEMO copy — replace with the client's approved FAQ wording before launch. */
+export const faq = {
+  eyebrow: 'FAQ',
+  title: 'Common questions.',
+  items: [
+    {
+      q: 'How much does membership cost?',
+      a: '$30 per month, billed monthly. One membership unlocks everything — no tiers, no upsells.',
+    },
+    {
+      q: "What's included?",
+      a: 'Daily market analysis, deep-dive breakdowns, daily FX & commodities updates, live AGTS & MTS trade signals, and the structured Trading Technical Analysis course.',
+    },
+    {
+      q: 'How many signals do I get?',
+      a: 'Between 10 and 20 AGTS & MTS signals on a typical trading day, posted live with entry, stop, and target context.',
+    },
+    {
+      q: "I've never traded before — is this for me?",
+      a: 'Yes. The technical-analysis course starts from first principles, and the daily sessions show the method applied in real market conditions.',
+    },
+    {
+      q: 'Can I cancel anytime?',
+      a: 'Yes. Membership is month-to-month. Cancel whenever you like and keep access until the end of the current billing period.',
+    },
+    {
+      q: 'Is GUILD Academy regulated?',
+      a: 'GUILD Academy is a licensed academy registered in Dubai, UAE. It provides education only and does not offer financial advice — see the disclosure in the footer.',
     },
   ],
 };

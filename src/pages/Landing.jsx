@@ -5,6 +5,7 @@ import Benefits from '../components/Benefits';
 import WhyGuild from '../components/WhyGuild';
 import HowItWorks from '../components/HowItWorks';
 import LeadForm from '../components/LeadForm';
+import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
 export default function Landing() {
@@ -29,6 +30,7 @@ export default function Landing() {
         <WhyGuild />
         <HowItWorks />
         <LeadForm ref={formRef} />
+        <FAQ />
       </main>
       <Footer />
     </>
