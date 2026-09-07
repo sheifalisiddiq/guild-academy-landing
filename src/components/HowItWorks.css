@@ -1,0 +1,155 @@
+.how {
+  background-color: var(--navy-deep);
+  border-top: 1px solid var(--line);
+}
+
+.how__head {
+  text-align: center;
+  max-width: var(--max-width-narrow);
+  margin-inline: auto;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.how__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Horizontal rail sitting behind the step nodes. */
+.how__connector {
+  position: absolute;
+  top: 5px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+  transform-origin: left center;
+}
+
+/* Liquid glass step cards on desktop. */
+.how__step {
+  position: relative;
+  padding: 2rem clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem);
+  text-align: center;
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+}
+
+.how__node {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  box-shadow: 0 0 0 5px var(--navy-deep), 0 0 22px 2px var(--bronze-glow);
+  z-index: 2;
+}
+
+/* Oversized numeral sitting low-contrast behind the step title. */
+.how__numeral {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 4.75rem);
+  line-height: 1;
+  color: var(--white);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+.how__title {
+  position: relative;
+  font-size: var(--fs-h3);
+  margin-top: 0.75rem;
+}
+
+.how__body {
+  position: relative;
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: var(--fs-small);
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .how__connector {
+    transform: scaleX(0);
+    transition: transform 900ms var(--ease-out);
+  }
+
+  .how__steps.is-visible .how__connector {
+    transform: scaleX(1);
+  }
+
+  .how__step {
+    transition:
+      transform var(--dur-mid) var(--ease-out),
+      box-shadow var(--dur-mid) var(--ease-out),
+      border-color var(--dur-mid) var(--ease-out);
+  }
+
+  .how__step:hover {
+    transform: translateY(-3px);
+    border-color: var(--glass-border-highlight);
+    box-shadow: var(--glass-shadow-lg);
+  }
+}
+
+@media (max-width: 780px) {
+  .how__steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding-left: 0;
+  }
+
+  .how__connector {
+    display: none;
+  }
+
+  .how__step {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    text-align: left;
+  }
+
+  .how__node {
+    position: static;
+    transform: none;
+    margin-bottom: var(--space-2);
+  }
+
+  .how__numeral {
+    position: static;
+    display: block;
+    transform: none;
+    font-size: 2.5rem;
+    opacity: 0.08;
+    line-height: 0.9;
+    margin-bottom: 0.25rem;
+  }
+
+  .how__title {
+    margin-top: 0;
+  }
+
+  .how__body {
+    margin-inline: 0;
+  }
+}

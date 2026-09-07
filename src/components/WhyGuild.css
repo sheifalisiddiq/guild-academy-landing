@@ -1,0 +1,92 @@
+.why {
+  background-color: var(--navy);
+  border-top: 1px solid var(--line);
+}
+
+.why__head {
+  max-width: var(--max-width-narrow);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.why__statement {
+  font-size: var(--fs-h2);
+  margin-top: 0.625rem;
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.why__supporting {
+  margin-top: 0.875rem;
+  margin-inline: auto;
+}
+
+.why__proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-top: clamp(1.5rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+/* Liquid glass proof cards. */
+.why__proof-item {
+  text-align: center;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+}
+
+.why__proof-label {
+  font-size: var(--fs-h3);
+  display: inline-block;
+  padding-bottom: 0.625rem;
+  position: relative;
+}
+
+/* Short bronze underline — the proof row's only ornament. */
+.why__proof-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 2px;
+  background: var(--gradient-brand);
+  border-radius: 1px;
+}
+
+.why__proof-detail {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: var(--fs-small);
+  max-width: 30ch;
+  margin-inline: auto;
+}
+
+.why__testimonials {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-top: clamp(1.5rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 780px) {
+  .why__proof {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .why__proof-item {
+    padding: 1.25rem 1rem;
+  }
+}

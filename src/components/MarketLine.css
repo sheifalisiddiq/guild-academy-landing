@@ -1,0 +1,60 @@
+/* Confined to a band across the lower part of the hero rather than the whole
+   section: at full height the line scales up under `slice` and starts
+   competing with the headline instead of sitting behind it. */
+.market-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(58%, 460px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.market-line svg {
+  width: 100%;
+  height: 100%;
+}
+
+.market-line__area {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 2400 comfortably exceeds the path length, so the line starts fully
+     retracted and draws in left to right exactly once. */
+  .market-line__path {
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    animation: ml-draw 2600ms var(--ease-out) 200ms forwards;
+  }
+
+  .market-line__area,
+  .market-line__tip {
+    opacity: 0;
+    animation: ml-fade 1200ms var(--ease-out) 1900ms forwards;
+  }
+
+  @keyframes ml-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes ml-fade {
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  .market-line__tip {
+    animation-name: ml-fade-tip;
+  }
+
+  @keyframes ml-fade-tip {
+    to {
+      opacity: 1;
+    }
+  }
+}

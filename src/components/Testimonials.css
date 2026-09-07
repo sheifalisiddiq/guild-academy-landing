@@ -1,0 +1,156 @@
+/* Movie carousel flowing testimonials track */
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-block: 1rem;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  outline: none;
+}
+
+.marquee__track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marqueeFlow 38s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+/* Liquid glass testimonial card in the flowing carousel */
+.marquee__card {
+  flex: 0 0 380px;
+  max-width: 380px;
+  margin: 0;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: transform var(--dur-mid) var(--ease-out),
+              border-color var(--dur-mid) var(--ease-out),
+              box-shadow var(--dur-mid) var(--ease-out);
+}
+
+.marquee__card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--glass-border-highlight);
+  box-shadow: var(--glass-shadow-lg);
+}
+
+.marquee__stars {
+  color: #eab308;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+}
+
+.marquee__quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.marquee__author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.marquee__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px -2px rgba(169, 98, 72, 0.45);
+}
+
+.marquee__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.marquee__name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.marquee__role {
+  font-size: 0.8125rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 560px) {
+  .marquee__card {
+    flex: 0 0 300px;
+    max-width: 300px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .marquee__quote {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+
+  .marquee__card {
+    scroll-snap-align: start;
+  }
+}

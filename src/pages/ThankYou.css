@@ -1,0 +1,126 @@
+.ty {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88svh;
+  padding-block: clamp(5rem, 12vh, 8rem);
+  background-color: var(--navy);
+  text-align: center;
+  overflow: hidden;
+}
+
+.ty__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(900px, 130vw);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(169, 98, 72, 0.28) 0%,
+    rgba(169, 98, 72, 0.08) 40%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.ty__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Liquid glass thank-you card */
+.ty__card {
+  position: relative;
+  max-width: 660px;
+  width: 100%;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3.25rem);
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: var(--glass-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ty__mark {
+  width: clamp(74px, 9vw, 104px);
+  height: auto;
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+  filter: drop-shadow(0 0 36px rgba(169, 98, 72, 0.55));
+}
+
+.ty__headline {
+  font-size: var(--fs-display);
+}
+
+.ty__message {
+  margin-top: var(--space-3);
+  max-width: 48ch;
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.ty__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: clamp(2.25rem, 5vw, 3rem);
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ty__card {
+    opacity: 0;
+    animation: ty-rise 900ms var(--ease-out) forwards;
+  }
+
+  .ty__mark {
+    animation: ty-mark 1100ms var(--ease-out) forwards;
+  }
+
+  @keyframes ty-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes ty-mark {
+    from {
+      opacity: 0;
+      transform: scale(0.86);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ty__card {
+    border-radius: var(--radius-lg);
+    padding: 2.25rem 1.25rem;
+  }
+
+  .ty__actions .btn {
+    width: 100%;
+  }
+}
