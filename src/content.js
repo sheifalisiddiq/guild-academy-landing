@@ -47,13 +47,25 @@ export const video = {
 };
 
 export const benefits = {
-  eyebrow: "What You'll Get",
-  title: 'Everything you need to start trading properly.',
+  eyebrow: "GUILD ACADEMY · MEMBERSHIP",
+  title: 'Everything Included at $30/Month',
+  subtitle:
+    'Daily market analysis, live AGTS & MTS signals, and a structured technical analysis course — one membership, full access.',
+  stats: [
+    { label: 'MONTHLY MEMBERSHIP', value: '$30' },
+    { label: 'DAILY SIGNALS', value: '10–20' },
+  ],
+  accessTitle: 'WHAT YOU GET ACCESS TO',
+  accessItems: [
+    'Daily Market Analysis',
+    'Deep Dives',
+    'FX & Commodities: Daily Updates',
+    'AGTS & MTS Signals (10–20 Daily)',
+    'Trading Technical Analysis Course',
+  ],
+  itemsTitle: 'TRACK RECORD',
   items: [
-    '12,500+ five-star reviews across all student platforms',
     'Verified track-record with institutional trade documentation',
-    'Founded in 2018 and built on years of live market experience',
-    'Built for dedicated beginners, trusted by active experienced traders',
     'Daily live market execution sessions across Forex, Commodities & Indices',
     'Proprietary GUILD risk management framework & position sizing playbook',
   ],
@@ -70,6 +82,17 @@ export const benefits = {
     ],
   },
   cta: 'Get Started Today',
+};
+
+/* AGTS performance figures — shown as an animated stat strip below the hero. */
+export const trackRecord = {
+  eyebrow: 'AGTS',
+  stats: [
+    { label: 'This Year', value: 53, decimals: 0, suffix: '%' },
+    { label: 'Win Rate', value: 83, decimals: 0, suffix: '%' },
+    { label: 'Avg. Monthly Return', value: 19.09, decimals: 2, suffix: '%' },
+  ],
+  highlightIndex: 1,
 };
 
 export const whyGuild = {

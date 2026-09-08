@@ -10,6 +10,49 @@
   margin-bottom: clamp(1.25rem, 2.2vw, 1.75rem);
 }
 
+.benefits__subtitle {
+  margin-top: 0.625rem;
+  margin-inline: auto;
+  max-width: 58ch;
+}
+
+.benefits__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.benefits__stat-card {
+  border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-border-highlight);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+}
+
+.benefits__stat-label {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  color: #10b981;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.benefits__stat-val {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+}
+
 /* Liquid glass checklist card */
 .benefits__card {
   position: relative;
@@ -21,6 +64,26 @@
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow: var(--glass-shadow-lg);
+}
+
+.benefits__access-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.benefits__access-title,
+.benefits__items-title {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--bronze);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.benefits__items-title {
+  margin-top: 1.5rem;
 }
 
 .benefits__checklist {
@@ -56,14 +119,6 @@
   color: #ffffff;
   flex-shrink: 0;
   box-shadow: 0 3px 10px -2px rgba(16, 185, 129, 0.4);
-}
-
-.benefits__flag-svg {
-  width: 24px;
-  height: 16px;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  flex-shrink: 0;
 }
 
 .benefits__item-text {

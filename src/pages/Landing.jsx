@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
+import TrackRecord from '../components/TrackRecord';
 import Benefits from '../components/Benefits';
 import WhyGuild from '../components/WhyGuild';
 import HowItWorks from '../components/HowItWorks';
@@ -26,6 +27,7 @@ export default function Landing() {
       <Nav onCtaClick={scrollTo(formRef)} />
       <main>
         <Hero onCtaClick={scrollTo(formRef)} />
+        <TrackRecord />
         <Benefits onCtaClick={scrollTo(formRef)} />
         <WhyGuild />
         <HowItWorks />

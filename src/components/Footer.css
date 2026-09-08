@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--navy);
   border-top: 1px solid var(--line);
-  padding-block: clamp(3rem, 6vw, 4.5rem);
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .footer__inner {
@@ -9,40 +9,56 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-3);
+  gap: 1.25rem;
 }
 
 .footer__mark {
-  width: 44px;
+  width: 38px;
   height: auto;
-  opacity: 0.9;
+  opacity: 0.85;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.footer__mark:hover {
+  opacity: 1;
 }
 
 .footer__disclosure {
-  max-width: 68ch;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--text-dim);
+  max-width: 72ch;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  opacity: 0.85;
 }
 
 .footer__socials {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-3);
+  gap: 1rem;
   list-style: none;
   padding: 0;
-  font-size: var(--fs-eyebrow);
-  letter-spacing: var(--tracking-eyebrow);
+  margin: 0.25rem 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .footer__socials a {
   color: var(--text-muted);
+  padding: 0.35rem 0.875rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all var(--dur-fast) var(--ease-out);
 }
 
 .footer__socials a:hover {
-  color: var(--rose);
+  color: var(--text);
+  border-color: var(--bronze-line);
+  background: rgba(169, 98, 72, 0.12);
+  box-shadow: 0 0 16px var(--bronze-glow);
 }
 
 .footer__copy {
@@ -52,6 +68,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .footer__socials a {
-    transition: color var(--dur-fast) var(--ease-out);
+    transition: all var(--dur-fast) var(--ease-out);
   }
 }

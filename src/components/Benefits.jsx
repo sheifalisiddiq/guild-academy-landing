@@ -11,9 +11,46 @@ export default function Benefits({ onCtaClick }) {
         <div className="benefits__head">
           <span className="eyebrow">{benefits.eyebrow}</span>
           <h2 className="section-title">{benefits.title}</h2>
+          {benefits.subtitle && <p className="lead benefits__subtitle">{benefits.subtitle}</p>}
         </div>
 
+        {benefits.stats && (
+          <div className="benefits__stats">
+            {benefits.stats.map((st, i) => (
+              <div key={i} className="benefits__stat-card">
+                <span className="benefits__stat-label">{st.label}</span>
+                <span className="benefits__stat-val">{st.value}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
         <div ref={ref} className={cx('benefits__card reveal', isVisible && 'is-visible')}>
+          {benefits.accessTitle && (
+            <div className="benefits__access-section">
+              <h3 className="benefits__access-title">{benefits.accessTitle}</h3>
+              <ul className="benefits__checklist">
+                {benefits.accessItems.map((item, i) => (
+                  <li key={i} className="benefits__item">
+                    <span className="benefits__tick" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" width="16" height="16" fill="none">
+                        <path
+                          d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                    <span className="benefits__item-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {benefits.itemsTitle && (
+            <h3 className="benefits__items-title">{benefits.itemsTitle}</h3>
+          )}
+
           <ul className="benefits__checklist">
             {benefits.items.map((item, i) => (
               <li key={i} className="benefits__item">
@@ -30,19 +67,15 @@ export default function Benefits({ onCtaClick }) {
             ))}
 
             {benefits.location && (
-              <li className="benefits__item benefits__item--location">
-                <svg
-                  className="benefits__flag-svg"
-                  viewBox="0 0 24 16"
-                  width="24"
-                  height="16"
-                  aria-hidden="true"
-                >
-                  <rect width="24" height="16" fill="#00732f" />
-                  <rect y="5.33" width="24" height="5.34" fill="#ffffff" />
-                  <rect y="10.67" width="24" height="5.33" fill="#000000" />
-                  <rect width="6" height="16" fill="#ff0000" />
-                </svg>
+              <li className="benefits__item">
+                <span className="benefits__tick" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="none">
+                    <path
+                      d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
                 <span className="benefits__item-text">{benefits.location}</span>
               </li>
             )}
