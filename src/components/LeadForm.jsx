@@ -5,6 +5,21 @@ import './LeadForm.css';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
+const SOURCE_LABELS = {
+  tiktok: 'TikTok',
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+};
+
+function readSource() {
+  try {
+    const utm = new URLSearchParams(window.location.search).get('utm_source');
+    return SOURCE_LABELS[(utm || '').trim().toLowerCase()] || 'Direct';
+  } catch {
+    return 'Direct';
+  }
+}
+
 const initialValues = {
   name: '',
   email: '',
@@ -91,7 +106,7 @@ const LeadForm = forwardRef(function LeadForm(_props, ref) {
       email: values.email.trim().toLowerCase(),
       phone: values.dialCode + values.phone.replace(/\D/g, ''),
       trading_experience: values.experience,
-      source: 'guild-academy-landing',
+      source: readSource(),
       submitted_at: new Date().toISOString(),
     };
 

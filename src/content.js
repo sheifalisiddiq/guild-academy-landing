@@ -12,7 +12,7 @@
    To go live: paste the GoHighLevel inbound-webhook URL into SUBMIT_ENDPOINT.
    LeadForm automatically switches from demo mode to a real POST as soon as
    this string is non-empty — no other change required.                      */
-export const SUBMIT_ENDPOINT = '';
+export const SUBMIT_ENDPOINT = 'https://services.leadconnectorhq.com/hooks/vB2xTTdlUokjHQ3J53Ju/webhook-trigger/e4ZPPfWMpd63d6a6mfg7';
 
 export const THANK_YOU_URL = './thank-you.html';
 
