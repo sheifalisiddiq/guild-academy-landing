@@ -256,10 +256,9 @@ export const footer = {
   disclosure:
     'Trading involves risk. GUILD Academy provides education only and does not provide financial advice or guarantee results. Never trade with money you cannot afford to lose.',
   copyright: `© ${new Date().getFullYear()} GUILD Academy. All rights reserved.`,
-  /* PLACEHOLDER — replace with the real profile URLs. */
   socials: [
-    { label: 'Instagram', href: '#' },
-    { label: 'YouTube', href: '#' },
-    { label: 'LinkedIn', href: '#' },
+    { label: 'Instagram', href: 'https://www.instagram.com/guild.academy.official?stkn=MTU2M21pdDA2emNyeA==' },
+    { label: 'Facebook', href: 'https://www.facebook.com/guild.academy.official' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@guild.academy.official' },
   ],
 };
