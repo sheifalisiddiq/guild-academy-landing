@@ -186,44 +186,24 @@ export const faq = {
   title: 'Common questions.',
   items: [
     {
-      q: 'I’m completely new to trading. Is Guild Academy suitable for me?',
-      a: 'Yes. You can start without previous trading experience. Our structured education introduces the basics of reading charts, understanding trade setups and managing risk. You can build your knowledge at your own pace before deciding whether to trade with real money.',
+      q: 'Is Guild Academy suitable for beginners?',
+      a: 'Yes. Our courses guide you through the basics of trading, reading charts and managing risk. You can learn at your own pace and build your understanding step by step.',
     },
     {
-      q: 'What do I get for $30 per month?',
-      a: 'Your membership includes structured trading education, daily forex and commodities analysis, trading signals, deeper market breakdowns and access to our private member channels. You’ll also receive onboarding support and access to live sessions or replays when scheduled. Membership is billed monthly.',
+      q: 'What’s included in the $30 monthly membership?',
+      a: 'Structured trading courses, daily market analysis, trading signals, private member channels and scheduled live sessions. You’ll also receive onboarding support to help you get started.',
     },
     {
-      q: 'How do the trading signals work, and how many will I receive?',
-      a: 'We typically share 10–20 signals on a trading day, depending on market conditions. Signals include entry, stop-loss and target levels, with context to help you understand the setup. Our education helps you interpret these signals and understand the risk involved.',
+      q: 'How do the trading signals work?',
+      a: 'Signals include entry, stop-loss and target levels, with context to help you understand the setup. Our educational content helps you learn how to interpret them and manage your risk.',
     },
     {
-      q: 'Where do I access the content and signals?',
-      a: 'Once your membership is activated, we’ll guide you into the member area and private Telegram channels. Our onboarding bot helps connect your Telegram account to your membership so you can access the relevant content and updates.',
+      q: 'How do I get started?',
+      a: 'Complete the short form and our team will contact you to explain the membership and guide you through joining. Once activated, you’ll receive instructions for accessing the member area and private Telegram channels.',
     },
     {
-      q: 'Do I need a broker account or trading deposit to join?',
-      a: 'No. You can join the education membership and start learning without opening or funding a trading account. If you later decide to trade or explore copy trading, a separate broker account, trading funds and additional requirements may apply.',
-    },
-    {
-      q: 'Is copy trading included in my membership?',
-      a: 'Membership gives you access to information and onboarding support for available copy-trading options. Activation is separate and depends on availability, eligibility and the requirements of the relevant provider. A broker account, trading deposit and separate fees may be required, which our team will explain before you proceed.',
-    },
-    {
-      q: 'Can I cancel my membership?',
-      a: 'Yes. Membership runs monthly. Cancel before your next renewal to stop future subscription charges, and you’ll retain access until the end of your current paid billing period. If you need help, contact [help@guildacademy.info](mailto:help@guildacademy.info).',
-    },
-    {
-      q: 'What happens after I submit the form?',
-      a: 'A member of our team will contact you to answer your questions, explain the membership and guide you through joining. Submitting the form is an enquiry—it does not activate a paid subscription or charge you.',
-    },
-    {
-      q: 'Is Guild Academy a broker?',
-      a: 'Guild Academy is a trading education platform based in Dubai. We provide learning resources, market analysis and signals. Any brokerage or copy-trading arrangement has its own account setup, terms and requirements, separate from your academy membership.',
-    },
-    {
-      q: 'Are trading results guaranteed?',
-      a: 'No. Education and signals can help you develop your understanding and decision-making, but trading involves risk and losses are possible. Previous performance does not guarantee future results. Managing risk is a core part of what we teach.',
+      q: 'Can I cancel anytime?',
+      a: 'Yes. Membership is billed monthly. Cancel before your next renewal to stop future charges, and keep access until the end of your current paid period.',
     },
   ],
 };
