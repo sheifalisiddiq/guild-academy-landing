@@ -2,6 +2,30 @@ import { faq } from '../content';
 import { cx, useReveal } from '../hooks/useReveal';
 import './FAQ.css';
 
+function renderAnswer(text) {
+  if (typeof text !== 'string') return text;
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    parts.push(
+      <a key={match.index} href={match[2]} className="faq__link">
+        {match[1]}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 export default function FAQ() {
   const [ref, isVisible] = useReveal({ threshold: 0.2 });
 
@@ -25,7 +49,7 @@ export default function FAQ() {
                 <span className="faq__icon" aria-hidden="true" />
               </summary>
               <div className="faq__a">
-                <p>{item.a}</p>
+                <p>{renderAnswer(item.a)}</p>
               </div>
             </details>
           ))}

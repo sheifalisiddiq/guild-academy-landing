@@ -96,6 +96,17 @@
   max-width: 65ch;
 }
 
+.faq__link {
+  color: var(--bronze);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.faq__link:hover {
+  color: var(--text);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .faq__item {
     transition:
